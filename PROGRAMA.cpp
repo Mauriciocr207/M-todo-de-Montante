@@ -1,7 +1,7 @@
 // PROGRAMA.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí. 
 // 
 #include <iostream> 
-#include <stdlib.h> //
+#include <stdlib.h>
 #include <fstream> //Incluye las funciones new-delete[]
 #include <sstream>
 using namespace std;
@@ -63,20 +63,20 @@ int analisisDatos(string nombre) {
     if (archivo.is_open())
     {
         cout << "Se logro abrir archivo" << endl;
-      //Obtenemos la primera linea del archvio, y contamos las ' , '
+        //Obtenemos la primera linea del archvio, y contamos las ' , '
         getline(archivo, texto);
-       for (int i = 0; i < texto.length() - 1; i++)
-       {
+        for (int i = 0; i < texto.length() - 1; i++)
+        {
             if (texto[i] == ',')
             {
                 contador++;
             }
         }
-       contador++; 
-       archivo.close();
+        contador++; 
+        archivo.close();
 
-       //Se abre archivo nuevamente
-       archivo.open(nombre); 
+        //Se abre archivo nuevamente
+        archivo.open(nombre); 
         //Declaracion de la matriz
         matriz = new double* [contador]; //Se crean las filas
         for (int j = 0; j < contador; j++)
@@ -239,14 +239,3 @@ void Imprimir_resultado(int contador, double* matriz) {
     }
 }
 
-
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
